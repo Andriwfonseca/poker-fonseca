@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model Historico {
+  id             Int    @id @unique(map: "id_UNIQUE") @default(autoincrement())
+  id_partida     Int?
+  id_jogador     Int?
+  valor_apostado Float?
+  saldo          Float?
+  @@map("historico")
+}
+
+model Jogadores {
+  id           Int    @id @unique(map: "id_UNIQUE") @default(autoincrement())
+  nome         String @db.VarChar(255)
+  qtd_vitorias Int?
+  qtd_derrotas Int?
+  qtd_partidas Int?
+  saldo        Float?
+  @@map("jogadores")
+}
+
+model Partidas {
+  id            Int      @id @unique(map: "id_UNIQUE") @default(autoincrement())
+  data          DateTime @db.Date
+  qtd_jogadores Int?
+  @@map("partidas")
+}
