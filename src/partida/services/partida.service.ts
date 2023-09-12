@@ -35,7 +35,7 @@ export class PartidaService {
     }
 
     public async remove(id: number){
-        return this.prisma.jogadores.delete({
+        return this.prisma.partidas.delete({
             where: { id }
         })
     }
