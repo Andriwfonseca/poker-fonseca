@@ -1,11 +1,12 @@
 import { Injectable } from "@nestjs/common";
 import { prismaService } from "src/prisma/prisma.service";
+import { PartidaDto } from "../dtos/partida.dto";
 
 @Injectable()
 export class PartidaService {
     constructor(private readonly prisma: prismaService) { }
 
-    public async create (dto: any) {
+    public async create (dto: PartidaDto) {
         return this.prisma.partidas.create({
             data: {
                 data: dto.data,
@@ -24,7 +25,7 @@ export class PartidaService {
         });
     }
 
-    public async update(id: number, dto: any){
+    public async update(id: number, dto: PartidaDto){
         return this.prisma.partidas.update({
             where: { id },
             data: { 
