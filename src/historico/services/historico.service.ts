@@ -49,4 +49,10 @@ export class HistoricoService {
             where: { id_jogador: player }
         });
     }
+
+    public async findByPartida(partida: number){
+        return this.prisma.historico.findMany({
+            where: { id_partida: partida }
+        });
+    }
 }

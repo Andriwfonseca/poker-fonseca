@@ -48,6 +48,16 @@ export class HistoricoController {
     public async findByPlayer (@Param("player") player: number) {
         return this.historicoService.findByPlayer(+player);
     }
+    
+    @Get('/partida/:partida')
+    @ApiOperation({
+        summary: "Retorna todo historico do jogador",
+        description: "Retorna todo historico do jogador"
+    })
+    @ApiResponse({ status: 200, description: "" })
+    public async findByPartida (@Param("partida") partida: number) {
+        return this.historicoService.findByPartida(+partida);
+    }
 
     @Put('/:id')
     @ApiOperation({
