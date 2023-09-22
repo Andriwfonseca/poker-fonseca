@@ -3,8 +3,8 @@ import { ApiTags } from '@nestjs/swagger';
 import { JogadorService } from 'src/jogador/services/jogador.service';
 
 
-@Controller('')
-@ApiTags('')
+@Controller('poker')
+@ApiTags('poker')
 export class ViewController {
     constructor(
         private readonly jogadorService: JogadorService

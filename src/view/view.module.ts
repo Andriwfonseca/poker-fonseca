@@ -1,16 +1,12 @@
 import { Module } from "@nestjs/common";
 import { ViewController } from "./controllers/view.controller";
 import { JogadorService } from "src/jogador/services/jogador.service";
-import { prismaService } from "src/prisma/prisma.service";
+import { PrismaModule } from "src/prisma/prisma.module";
 
 
 @Module({
-    controllers: [
-        ViewController,
-    ],
-    providers: [
-        JogadorService,
-        prismaService
-    ]
+    imports: [PrismaModule],
+    controllers: [ViewController],
+    providers: [JogadorService]
 })
 export class ViewModule { }
