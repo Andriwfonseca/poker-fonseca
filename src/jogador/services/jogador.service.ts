@@ -21,7 +21,11 @@ export class JogadorService {
     }
 
     public async findAll () {
-        return this.prisma.jogadores.findMany();
+        return this.prisma.jogadores.findMany({
+            orderBy: {
+                saldo: 'desc'
+            }
+        });
     }
 
     public async findOne(id: number){
