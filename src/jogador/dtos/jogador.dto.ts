@@ -4,4 +4,6 @@ export class JogadorDto {
     qtd_partidas: number;
     qtd_vitorias: number;
     saldo: number;
+    receber: number;
+    devendo: number;
 }

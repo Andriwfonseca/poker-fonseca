@@ -18,12 +18,14 @@ model Historico {
 }
 
 model Jogadores {
-  id           Int    @id @unique(map: "id_UNIQUE") @default(autoincrement())
-  nome         String @db.VarChar(255)
-  qtd_vitorias Int?
-  qtd_derrotas Int?
-  qtd_partidas Int?
-  saldo        Float?
+  id             Int    @id @unique(map: "id_UNIQUE") @default(autoincrement())
+  nome           String @db.VarChar(255)
+  qtd_vitorias   Int?
+  qtd_derrotas   Int?
+  qtd_partidas   Int?
+  saldo          Float?
+  receber        Float?
+  devendo        Float?
   @@map("jogadores")
 }
 

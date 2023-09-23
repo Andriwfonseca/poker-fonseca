@@ -13,7 +13,9 @@ export class JogadorService {
                 qtd_derrotas: dto.qtd_derrotas,
                 qtd_partidas: dto.qtd_partidas,
                 qtd_vitorias: dto.qtd_vitorias,
-                saldo: dto.saldo
+                saldo: dto.saldo,
+                receber: dto.receber,
+                devendo: dto.devendo
             }
         });
     }
@@ -36,7 +38,9 @@ export class JogadorService {
                 qtd_derrotas: dto.qtd_derrotas,
                 qtd_partidas: dto.qtd_partidas,
                 qtd_vitorias: dto.qtd_vitorias,
-                saldo: dto.saldo
+                saldo: dto.saldo,
+                receber: dto.receber,
+                devendo: dto.devendo
             }
         });
     }
